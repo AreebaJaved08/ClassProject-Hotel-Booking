@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5dcd77c48a.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function checkAvailability() {
+                var arrivalDate = document.getElementById("arrivalDate").value;
+                var departureDate = document.getElementById("departureDate").value;
+                var numAdults = document.getElementById("numAdults").value;
+                var numChildren = document.getElementById("numChildren").value;
+
+                //  room availability check 
+                var isRoomsAvailable = true;
+
+                if (isRoomsAvailable) {
+                    alert("Rooms are available for:\nArrival Date: " + arrivalDate +
+                        "\nDeparture Date: " + departureDate +
+                        "\nAdults: " + numAdults +
+                        "\nChildren: " + numChildren +
+                        "\nRooms are available!");
+                } else {
+                    alert("Sorry, rooms are not available for the selected dates and guests.");
+                }
+            }
+
+            var form = document.getElementById("availabilityForm");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                checkAvailability();
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="nav_bar">
+                <div class="hotelname">
+                    <h2>Velvet <span class="name">Oasis</span></h2>
+                </div>
+
+                <ul id="menulist">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><i class="fa fa-search"></i></li>
+                    <li><button id="booknow">BOOK NOW</button></li>
+                </ul>
+                <span id="bars" class="fa fa-bars" onclick="menutoggle()"></span>
+            </div>
+        </header>
+
+        <script src="script.js"></script>
+
+        <section id="home" class="hotel_image">
+            <div class="image_text">
+                <h1>Spend Your Holiday</h1>
+                <p>-Want to get a world-class hotel experience?<br> -come to our hotel. </p>
+            </div>
+            <div class="image_buttons">
+                <button id="readmore">READ MORE</button>
+                <button id="contactus">CONTACT US</button>
+            </div>
+        </section>
+        <section class="rooms">
+            <div class="container flex_space">
+                <h3><span>Book </span> Your Rooms</h3>
+            </div>
+            <div class="form">
+                <form id="availabilityForm" class="grid">
+                    <input type="date" id="arrivalDate" placeholder="Arrival Date" required>
+                    <input type="date" id="departureDate" placeholder="Departure Date" required>
+                    <input type="number" id="numAdults" placeholder="Adults" required>
+                    <input type="number" id="numChildren" placeholder="Children" required>
+                    <input type="submit" value="CHECK AVAILABILITY">
+                </form>
+            </div>
+        </section>
+
+        <section class="about_top" id="about">
+
+            <div class="left">
+                <div class="heading">
+                    <h1>Velvet Oasis</h1>
+
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laudantium ab consectetur rem
+                    facilis!
+                    Reiciendis, possimus delectus. Delectus doloremque iure cum voluptatum quos blanditiis eum
+                    placeat eligendi accusantium omnis, eaque, error est voluptas vitae ad vel esse eveniet at
+                    pariatur?
+                </p>
+                <button id="about_us">ABOUT US</button>
+            </div>
+            <div class="right">
+                <div class="lobby_img">
+                    <img src="images/reception.jpg" />
+                </div>
+            </div>
+
+
+        </section>
+        <section class="count" id="news">
+            <div class="box">
+                <h1>2500</h1>
+                <hr>
+                <span>Customer</span>
+            </div>
+            <div class="box">
+                <h1>1250</h1>
+                <hr>
+                <span>Happy Customer</span>
+            </div>
+            <div class="box">
+                <h1>150</h1>
+                <hr>
+                <span>Expert Technicians</span>
+            </div>
+
+        </section>
+        <section class="features" id="rooms">
+            <h1>EXPLORE</h1>
+            <h2>OUR ROOMS</h2>
+            <div class="cards">
+                <div class="feature">
+                    <img src="images/room 1.jpg" alt="" />
+                    <div class="feature_content">
+                        <h3>Luxury room</h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi debitis veritatis
+                        eaque
+                        quia maxime!
+                        <h3>80$ <span><br>Per Night</span></h3>
+                        <button class="booking" onclick="bookRoom(this)">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <img src="images/room6.jpg" alt="" />
+                    <div class="feature_content">
+                        <h3>Perfect for stay</h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi debitis veritatis
+                        eaque
+                        quia maxime!
+                        <h3>50$ <span><br>Per Night</span></h3>
+                        <button class="booking" onclick="bookRoom(this)">Book Now</button>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="images/room4.jpg" alt="" />
+                    <div class="feature_content">
+                        <h3>Perfect for Vacation</h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi debitis veritatis
+                        eaque
+                        quia maxime!
+                        <h3>60$ <span><br>Per Night</span></h3>
+                        <button class="booking" onclick="bookRoom(this)">Book Now</button>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="images/room5.jpg" alt="" />
+                    <div class="feature_content">
+                        <h3>Fine Art</h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi debitis veritatis
+                        eaque
+                        quia maxime!
+                        <h3>70$ <span><br>Per Night</span></h3>
+                        <button class="booking" onclick="bookRoom(this)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Script code for booking a room-->
+        <script>
+            function bookRoom(button) {
+                const featureContent = button.parentElement;
+                featureContent.innerHTML = "<h3>Room Booked!</h3><p>Thank you for booking with us.</p>";
+            }
+        </script>
+
+        <footer id="contact">
+            <div class=" footer_container ">
+                <h2>Velvet <span><br>Oasis</span></h2>
+
+                <div class="link_lists">
+                    <h3>Support</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms & Conditions</li>
+
+                    </ul>
+                </div>
+                <div class="news_letter">
+                    <h3>Support</h3>
+                    <input type="email" placeholder="Enter your email...">
+                </div>
+                <div class="follow">
+                    <h3>Follow Us</h3>
+                    <div class="icon_container">
+                        <div class="icon">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-youtube"></i>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
